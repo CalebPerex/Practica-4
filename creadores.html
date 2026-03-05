@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Creadores - Blog Equipo 1</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<script>
+
+let index = 0;
+let slides = document.getElementsByClassName("slide");
+
+function mostrarSlide(i){
+
+for(let j=0; j<slides.length; j++){
+slides[j].classList.remove("active");
+}
+
+slides[i].classList.add("active");
+}
+
+function siguiente(){
+index++;
+
+if(index >= slides.length){
+index = 0;
+}
+
+mostrarSlide(index);
+}
+
+function anterior(){
+index--;
+
+if(index < 0){
+index = slides.length - 1;
+}
+
+mostrarSlide(index);
+}
+
+</script>
+
+<body>
+
+<header>
+    <h1>Blog del Equipo 1</h1>
+</header>
+
+<section class="contenido">
+
+    <h2>Historia de Vivencias del Equipo</h2>
+
+    <p>
+        A lo largo del semestre hemos compartido diferentes experiencias
+        académicas y personales que fortalecieron nuestro trabajo en equipo.
+    </p>
+
+<div class="slider">
+
+<button class="btn-slider" onclick="anterior()">❮</button>
+
+<div class="slides">
+
+<div class="slide active">
+<img src="foto1.jpeg">
+<p>Desarrollo de nuestro primer proyecto web.</p>
+</div>
+
+<div class="slide">
+<img src="foto2.jpeg">
+<p>Trabajo colaborativo en laboratorio.</p>
+</div>
+
+<div class="slide">
+<img src="foto3.jpeg">
+<p>Presentación del proyecto final.</p>
+</div>
+
+<div class="slide">
+<img src="foto4.jpeg">
+<p>Momento de convivencia del equipo.</p>
+</div>
+
+</div>
+
+<button class="btn-slider" onclick="siguiente()">❯</button>
+
+</div>
+
+    <div class="botones-navegacion">
+        <a href="index.html">Inicio</a>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 - Instituto Tecnológico de Orizaba - Equipo 1</p>
+</footer>
+
+</body>
+</html>
